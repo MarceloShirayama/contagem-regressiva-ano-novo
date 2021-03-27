@@ -6,5 +6,6 @@
 
 1. Obter o próximo ano para o qual a contagem deve ser feita;
 2. Criar uma função que atualiza o contador;
-3. third
+3. Inserir os valores do contador na tela, mas antes obter a referência dos elementos onde
+vai ficar o contador;
 
