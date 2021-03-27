@@ -8,4 +8,4 @@
 2. Criar uma função que atualiza o contador;
 3. Inserir os valores do contador na tela, mas antes obter a referência dos elementos onde
 vai ficar o contador;
-
+4. Inserir a referência do próximo ano na tela.
