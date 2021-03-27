@@ -9,7 +9,20 @@ const countDownContainer = document.querySelector('#countdown');
 const nextYear = new Date().getFullYear() + 1;
 const newYearTime = new Date(`January 01 ${nextYear} 00:00:00`);
 
+const getTimeUnit = (timeUnit) => (timeUnit < 10 ? `0${timeUnit}` : timeUnit);
+
 nextYearContainer.textContent = nextYear;
+
+const insertCountDownValues = (days, hours, minutes, seconds) => {
+  // secondsContainer.textContent = seconds < 10 ? `0${seconds}` : seconds;
+  // minutesContainer.textContent = minutes < 10 ? `0${minutes}` : minutes;
+  // hoursContainer.textContent = hours < 10 ? `0${hours}` : hours;
+  // daysContainer.textContent = days < 10 ? `0${days}` : days;
+  secondsContainer.textContent = getTimeUnit(seconds);
+  minutesContainer.textContent = getTimeUnit(minutes);
+  hoursContainer.textContent = getTimeUnit(hours);
+  daysContainer.textContent = getTimeUnit(days);
+};
 
 const updateCountDown = () => {
   const currentTime = new Date();
@@ -19,15 +32,14 @@ const updateCountDown = () => {
   const minutes = Math.floor(difference / 1000 / 60) % 60;
   const seconds = Math.floor(difference / 1000) % 60;
 
-  secondsContainer.textContent = seconds < 10 ? `0${seconds}` : seconds;
-  minutesContainer.textContent = minutes < 10 ? `0${minutes}` : minutes;
-  hoursContainer.textContent = hours < 10 ? `0${hours}` : hours;
-  daysContainer.textContent = days < 10 ? `0${days}` : days;
+  insertCountDownValues(days, hours, minutes, seconds);
 };
 
-setTimeout(() => {
+const handleCountDownDisplay = () => {
   spinnerLoading.remove();
   countDownContainer.style.display = 'flex';
-}, 1000);
+};
+
+setTimeout(handleCountDownDisplay, 1000);
 
 setInterval(updateCountDown, 1000);
