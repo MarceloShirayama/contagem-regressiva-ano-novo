@@ -4,7 +4,7 @@
 
 ## Passos da construção da Projeto
 
-1. Obter o próximo ano para o qual a contagem deve ser feita.
-2. second
+1. Obter o próximo ano para o qual a contagem deve ser feita;
+2. Criar uma função que atualiza o contador;
 3. third
 
